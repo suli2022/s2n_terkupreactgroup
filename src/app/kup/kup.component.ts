@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-kup',
@@ -9,13 +9,13 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class KupComponent implements OnInit {
   kupForm !: FormGroup;
   
-  constructor() { }
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
-    this.kupForm = new FormGroup({
-      radius: new FormControl(''),
-      height: new FormControl(''),
-      volume: new FormControl('')
+    this.kupForm = this.formBuilder.group({
+      radius: [''],
+      height: [''],
+      volume: ['']
     });    
   }
   onSubmit() {
