@@ -1,19 +1,23 @@
 <h2>Kúp térfogata</h2>
 
-<form [formGroup]="kupForm">
-  <div>
+<form [formGroup]="kupForm" (ngSubmit)="onSubmit()">
+  <div class="mt-3">
     <input type="text" placeholder="radiuis"
-    formControlName="radius">
+    formControlName="radius"
+    class="form-control">
   </div>
-  <div>
+  <div class="mt-3">
     <input type="text" placeholder="height"
-    formControlName="height">
+    formControlName="height"
+    class="form-control">
   </div>
-  <button (click)="onClickCalcButton()">Számít</button>
+  <button type="submit"
+  class="btn btn-primary mt-3">Számít</button>
 
-  <div>
+  <div class="mt-3">
     <input type="text" readonly
-    formControlName="volume">
+    formControlName="volume"
+    class="form-control">
   </div>
     
 </form>
